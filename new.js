@@ -1,35 +1,6 @@
-let items = [774, 214, 694, 321, 674, 527, 120, 567];
-const shelfLength = 1310;
-
-let sortedItems = items.sort((a, b) => b - a);
-
-let armour = [];
-
-function buildShelf(sortedItems, shelfLength) {
-        let sum = 0;
-        let shelf = [];
-        for (let i = 0; i < sortedItems.length; i++) {
-            sum += sortedItems[i];
-            if (sum <= shelfLength){
-                shelf.push(sortedItems[i]);
-                sortedItems.splice(i, 1);
-                --i;
-            } else if (sum > shelfLength) {
-                sum -= sortedItems[i];
-                continue;
-            }
-        }
-        console.log(sum, shelf);
-        
-    }
-
-while (sortedItems.length != 0) {
-    i = 0;
-    buildShelf(sortedItems, shelfLength);
-    i++;
-}
-
-
+// let items = [774, 214, 694, 321, 674, 527, 120, 567];
+// const shelfLength = 1310;
+// let sortedItems = items.sort((a, b) => b - a);
 
 
 const addBtn = document.querySelector('.add');
@@ -67,22 +38,47 @@ function addInput() {
 }
 addBtn.addEventListener('click', addInput);
 
-/***********************************GET DATA ***************/ 
-let shelfSize = document.querySelector('#shelfSize');
-let submitBtn = document.querySelector('.submitBtn');
-let inputData = document.querySelectorAll('.measurement');
 
+function getData() {
+    const submitBtn = document.querySelector('.submitBtn');
 
+    submitBtn.addEventListener('click', () => {
+        let shelfSize = document.querySelector('#shelfSize');
+        let elements = document.querySelectorAll('.measurement');
+        let arr = [];
+        for (i = 0; i < elements.length; i++) {
+            let elemValue = Number(elements[i].value);
+            arr.push(elemValue);
+        }
 
+        let sortedItems = arr.sort((a, b) => b - a);
+        let shelfLength = Number(shelfSize.value);
 
+        while (sortedItems.length != 0) {
+            i = 0;
+            buildShelf(sortedItems, shelfLength);
+            i++;
+            }
+    });
+}
+getData();
 
-
-submitBtn.addEventListener('click', () => {
-    console.log(shelfSize.value);
-    console.log(inputData);
-})
-
-
+function buildShelf(sortedItems, shelfLength) {
+    let sum = 0;
+    let shelf = [];
+    for (let i = 0; i < sortedItems.length; i++) {
+        sum += sortedItems[i];
+        if (sum <= shelfLength){
+            shelf.push(sortedItems[i]);
+            sortedItems.splice(i, 1);
+            --i;
+        } else if (sum > shelfLength) {
+            sum -= sortedItems[i];
+            continue;
+        }
+    }
+    console.log(sum, shelf);
+}
 
 
 
