@@ -14,7 +14,7 @@ body {
     width: 80%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin-top: 10rem;
 }
 .simulator {
@@ -26,6 +26,7 @@ body {
     padding: 20px 5px 20px 20px;
     box-shadow: 0 2px 2px 13px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
+    margin-right: 20rem;
 }
 .input-group {
     max-height: 30rem;
@@ -114,27 +115,30 @@ label {
 }
 
 /************************************************ *******************************/
-.сabinet{
+.cabinet {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.3rem;
     position: relative;
-    background-color: rgb(250, 250, 250);
-    border: 1px solid black;
+    /* background-color: rgb(106, 106, 106);  */
+    background-image: url('images/cabinet3.png');
+    background-repeat: repeat;
+    padding-top: 18px;
 }
 
 .shelfCreated {
     display: flex;
-    height: 7rem;
-    justify-content: space-between;
+    height: 6rem;
+    justify-content: flex-start; 
     align-items: flex-end;
-    background-color: rgb(44, 71, 44);
+    /* background-color: rgb(34, 50, 34); */
+    /* background-color: rgb(109, 129, 109); */
     padding-top: 2rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .box {
     height: 4rem;
-    background-color: yellow;
+    background-color: rgb(52, 206, 185);
     z-index: 1000;
-
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
 }

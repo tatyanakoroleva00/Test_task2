@@ -96,13 +96,12 @@ console.log(bigArr);
 
 const cabinet = document.querySelector('.cabinet');
 
-
 function createShelves(shelfLength, bigArr) {
 
     cabinet.style.width = `${shelfLength}`;
-    cabinet.style.paddingLeft = '20px';
-    cabinet.style.paddingRight = '20px';
-    cabinet.style.paddingTop = '20px';
+    cabinet.style.border = '1px solid black';
+
+    
 
     for (let i = 0; i < bigArr.length; i++) {
         let res = document.createElement('div');
@@ -110,12 +109,20 @@ function createShelves(shelfLength, bigArr) {
         res.style.width = `${shelfLength}px`;
         cabinet.appendChild(res);
         
-
         for (let k = 0; k < bigArr[i].length; k++) {
             let box = document.createElement('div');
             box.classList = 'box';
             box.style.width = `${bigArr[i][k]}px`;
             res.appendChild(box);
+
+            if (k % 2 === 0) {
+                box.style.backgroundColor = 'blue';
+            } 
+
+            if (k % 3 === 0) {
+                box.style.backgroundColor = 'red';
+            }
+        
         }
     }
 }
