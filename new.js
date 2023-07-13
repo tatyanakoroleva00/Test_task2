@@ -3,6 +3,8 @@
 // let sortedItems = items.sort((a, b) => b - a);
 
 
+/****************************SIMULATOR - INTERACTIVE FORM CREATED *************************/
+
 const addBtn = document.querySelector('.add');
 const input = document.querySelector('.input-group');
 
@@ -39,6 +41,8 @@ function addInput() {
 addBtn.addEventListener('click', addInput);
 
 
+/**************************************************** DATA IS GOT FROM INPUTS ******************************/
+
 function getData() {
     const submitBtn = document.querySelector('.submitBtn');
 
@@ -59,9 +63,13 @@ function getData() {
             buildShelf(sortedItems, shelfLength);
             i++;
             }
+
+        createShelves(shelfLength, bigArr);
     });
 }
 getData();
+
+/*********************************************** SHELVES COUNTING*****************************/
 
 function buildShelf(sortedItems, shelfLength) {
     let sum = 0;
@@ -78,7 +86,44 @@ function buildShelf(sortedItems, shelfLength) {
         }
     }
     console.log(sum, shelf);
+    bigArr.push(shelf);
 }
+
+/*********************************************BEAUTIFYING SHELVES**********************/
+
+const bigArr = []; /*[ [] [] [] ]*/ 
+console.log(bigArr);
+
+const cabinet = document.querySelector('.cabinet');
+
+
+function createShelves(shelfLength, bigArr) {
+
+    cabinet.style.width = `${shelfLength}`;
+    cabinet.style.paddingLeft = '20px';
+    cabinet.style.paddingRight = '20px';
+    cabinet.style.paddingTop = '20px';
+
+    for (let i = 0; i < bigArr.length; i++) {
+        let res = document.createElement('div');
+        res.classList = 'shelfCreated';
+        res.style.width = `${shelfLength}px`;
+        cabinet.appendChild(res);
+        
+
+        for (let k = 0; k < bigArr[i].length; k++) {
+            let box = document.createElement('div');
+            box.classList = 'box';
+            box.style.width = `${bigArr[i][k]}px`;
+            res.appendChild(box);
+        }
+    }
+}
+
+
+
+
+
 
 
 

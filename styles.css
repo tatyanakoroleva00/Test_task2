@@ -15,18 +15,24 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin-top: 20rem;
+    margin-top: 10rem;
 }
 .simulator {
-    max-height: 30rem;
-    min-width: 22%;
+    max-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 25%;
     background-color: white;
-    padding: 20px 25px 20px 20px;
+    padding: 20px 5px 20px 20px;
     box-shadow: 0 2px 2px 13px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    border-radius: 15px;
+}
+.input-group {
+    max-height: 30rem;
     scroll-behavior: smooth;
     overflow-y: auto;
     overflow-x: hidden;
+    padding-right: 20px;
 }
 .wrap {
     display: flex;
@@ -50,6 +56,7 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     border-radius: 5px;
+    margin-right: 20px;
 }
 .boxLine {
     width: 100%;
@@ -85,12 +92,13 @@ body {
     font-size: 1.1rem;
 }
 .submitBtn {
-    padding: 0.7rem;
+    padding: 1rem;
     background-color: black;
     color: white;
     border-radius: 5px;
     cursor: pointer;
     border: transparent;
+    margin-right: 20px;
 }
 input {
     padding-left: 1rem;
@@ -102,6 +110,31 @@ label {
     font-size: 1.1rem;
 }
 .label {
-    margin-right: 5%;
+    margin-right: 10%;
 }
 
+/************************************************ *******************************/
+.сabinet{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid black;
+}
+
+.shelfCreated {
+    display: flex;
+    height: 7rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: rgb(44, 71, 44);
+    padding-top: 2rem;
+    border: 1px solid black;
+}
+.box {
+    height: 4rem;
+    background-color: yellow;
+    z-index: 1000;
+
+}
