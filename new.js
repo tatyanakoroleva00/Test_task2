@@ -77,7 +77,9 @@ function getData() {
         if (!shelfLength.match(regExp)) { //Проверка: вводимые данные должны быть числовыми
             alert('The shelf size must be a number');
             console.log(sortedItems);
-        } 
+        } else if (shelfLength > 2500) {
+            alert('Number must be less than 2500');
+        }
         else if (sortedItems.length === 0) { //Проверка: должны быть добавлены коробки 
             alert('Add some more shelves/boxes'); //P.s. Полки даже могут быть пустыми
         } else if (shelfLength < sortedItems[0]) { //Проверка: полка не меньше размера коробки 
@@ -135,13 +137,13 @@ function createShelves(shelfLength, bigArr) {
     for (let i = 0; i < bigArr.length; i++) {
         let res = document.createElement('div');
         res.classList = 'shelfCreated';
-        res.style.width = `${shelfLength}px`;
+        res.style.width = `${shelfLength / 3}px`;
         cabinet.appendChild(res);
         
         for (let k = 0; k < bigArr[i].length; k++) {
             let box = document.createElement('div');
             box.classList = 'box';
-            box.style.width = `${bigArr[i][k]}px`;
+            box.style.width = `${bigArr[i][k] / 3}px`;
             box.title = `${bigArr[i][k]}mm`;
             res.appendChild(box);
 
