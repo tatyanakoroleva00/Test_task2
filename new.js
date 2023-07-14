@@ -24,7 +24,7 @@ function addInput() {
 
     const measurement = document.createElement('input');
     measurement.type = 'number';
-    measurement.max = '9999';
+    measurement.maxLength = '4';
     measurement.placeholder = '0';
     measurement.classList = 'measurement';
     measurement.name = 'measure';
