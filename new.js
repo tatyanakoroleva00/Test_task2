@@ -4,7 +4,7 @@
 // let sortedItems = items.sort((a, b) => b - a);
 
 /***************************************************ЭТАПЫ РАБОТЫ***************************************************/
-/***********************************SIMULATOR - INTERACTIVE FORM CREATED ******************************************/
+/****************************SIMULATOR - INTERACTIVE FORM CREATED *************************/
 /* Создание интерактивной панели. 
 removeInput() - удаление записи при нажатии на кнопку, addInput() - добавление записи при нажатии на кнопку.
 */ 
@@ -59,27 +59,40 @@ addBtn.addEventListener('click', addInput);
 */
 function getData() {
     const submitBtn = document.querySelector('.submitBtn');
+    const regExp = /^[0-9]{1,4}$/;
 
     submitBtn.addEventListener('click', () => {
         let shelfSize = document.querySelector('#shelfSize');
         let elements = document.querySelectorAll('.measurement');
+
         let arr = [];
         for (i = 0; i < elements.length; i++) {
             let elemValue = Number(elements[i].value);
             arr.push(elemValue);
         }
-
         let sortedItems = arr.sort((a, b) => b - a);
-        let shelfLength = Number(shelfSize.value);
+        let shelfLength = shelfSize.value;
 
-        while (sortedItems.length != 0) {
-            i = 0;
-            buildShelf(sortedItems, shelfLength);
-            i++;
-            }
+        /**********************CHECKING ******************/
+        if (!shelfLength.match(regExp)) { //Проверка: вводимые данные должны быть числовыми
+            alert('The shelf size must be a number');
+            console.log(sortedItems);
+        } 
+        else if (sortedItems.length === 0) { //Проверка: должны быть добавлены коробки 
+            alert('Add some more shelves/boxes'); //P.s. Полки даже могут быть пустыми
+        } else if (shelfLength < sortedItems[0]) { //Проверка: полка не меньше размера коробки 
+            alert('Shelf length must be bigger than the box size');
+        } else {
+                    while (sortedItems.length != 0) {
+                    i = 0;
+                    buildShelf(sortedItems, shelfLength);
+                    i++;
+                    }
+                    createShelves(shelfLength, bigArr);
 
-        createShelves(shelfLength, bigArr);
-    });
+                    submitBtn.style.display = 'none';
+                }
+        });
 }
 getData();
 
@@ -111,7 +124,6 @@ Function createShelves() работает с размером полки и с �
 */
 
 const bigArr = []; /*[ [] [] [] ]*/ 
-console.log(bigArr);
 
 const cabinet = document.querySelector('.cabinet');
 
@@ -119,7 +131,6 @@ function createShelves(shelfLength, bigArr) {
 
     cabinet.style.width = `${shelfLength}`;
     cabinet.style.border = '1px solid black';
-
 
     for (let i = 0; i < bigArr.length; i++) {
         let res = document.createElement('div');
@@ -146,18 +157,14 @@ function createShelves(shelfLength, bigArr) {
     }
 }
 
+/*******************************************RESET  **********/
+/*Function resetValues() helps to reload the page and to get the data cleared*/
+function resetValues () {
+    location.reload();
+}
+const resetBtn = document.querySelector('.resetBtn');
+resetBtn.addEventListener('click', resetValues);
 
-
-
-// function resetValues () {
-//     for (let i = 0; i < allInputs.length; i++) {
-//         allInputs[i].value = '1';
-//     }
-//     // console.log(allInputs.length);
-// }
-// const resetBtn = document.querySelector('.resetBtn');
-// resetBtn.addEventListener('click', resetValues);
-// const allInputs = document.querySelectorAll('input[type="text"]');
 
 
 
