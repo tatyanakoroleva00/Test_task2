@@ -23,8 +23,8 @@ function addInput() {
     label.innerHTML = 'Box size (mm) ';
 
     const measurement = document.createElement('input');
-    measurement.type = 'text';
-    measurement.maxLength = '4';
+    measurement.type = 'number';
+    measurement.max = '9999';
     measurement.placeholder = '0';
     measurement.classList = 'measurement';
     measurement.name = 'measure';
