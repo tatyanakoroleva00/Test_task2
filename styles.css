@@ -94,12 +94,16 @@ body {
 }
 .submitBtn {
     padding: 1rem;
-    background-color: black;
+    background-color: rgb(29, 31, 28);
     color: white;
     border-radius: 5px;
     cursor: pointer;
     border: transparent;
     margin-right: 20px;
+    opacity: 0.95;
+}
+.submitBtn:hover {
+    opacity: 1;
 }
 input {
     padding-left: 1rem;
@@ -141,4 +145,18 @@ label {
     background-color: rgb(52, 206, 185);
     z-index: 1000;
     box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+}
+.resetBtn {
+    padding: 1rem;
+    background-color: rgb(95, 87, 92);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: transparent;
+    margin-right: 20px;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+.resetBtn:hover {
+    opacity: 0.9;
 }

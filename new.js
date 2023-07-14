@@ -101,7 +101,6 @@ function createShelves(shelfLength, bigArr) {
     cabinet.style.width = `${shelfLength}`;
     cabinet.style.border = '1px solid black';
 
-    
 
     for (let i = 0; i < bigArr.length; i++) {
         let res = document.createElement('div');
@@ -113,6 +112,7 @@ function createShelves(shelfLength, bigArr) {
             let box = document.createElement('div');
             box.classList = 'box';
             box.style.width = `${bigArr[i][k]}px`;
+            box.title = `${bigArr[i][k]}mm`;
             res.appendChild(box);
 
             if (k % 2 === 0) {
@@ -129,6 +129,16 @@ function createShelves(shelfLength, bigArr) {
 
 
 
+
+// function resetValues () {
+//     for (let i = 0; i < allInputs.length; i++) {
+//         allInputs[i].value = '1';
+//     }
+//     // console.log(allInputs.length);
+// }
+// const resetBtn = document.querySelector('.resetBtn');
+// resetBtn.addEventListener('click', resetValues);
+// const allInputs = document.querySelectorAll('input[type="text"]');
 
 
 
