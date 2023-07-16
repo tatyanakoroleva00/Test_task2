@@ -93,10 +93,12 @@ function getData() {
                     createShelves(shelfLength, bigArr);
 
                     submitBtn.style.display = 'none';
+                    addBtn.style.display = 'none';
                     
                 }
                     
         });
+
 }
 getData();
 
@@ -146,7 +148,7 @@ function createShelves(shelfLength, bigArr) {
             let box = document.createElement('div');
             box.classList = 'box';
             box.style.width = `${bigArr[i][k] / 3}px`;
-            box.title = `${bigArr[i][k]}mm`;
+            box.title = `${bigArr[i][k]}mm & ${i+1}row ${k+1}box`;
             res.appendChild(box);
 
             if (k % 2 === 0) {
@@ -168,11 +170,6 @@ function resetValues () {
 }
 const resetBtn = document.querySelector('.resetBtn');
 resetBtn.addEventListener('click', resetValues);
-
-function modifyData() {
-    getData()
-}
-
 
 
 

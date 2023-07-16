@@ -10,12 +10,24 @@ body {
     /* min-height: 100vh; */
     width: 100%;
 }
+h1 {
+    color: white;
+    margin-top: 7rem;
+    margin-left: 12rem;
+    font-size: 5rem;
+}
+.instruction {
+    color: white;
+    margin-left: 12rem;
+    font-size: 18px;
+    margin-bottom: 2rem;
+}
 .main-field {
     width: 80%;
     margin: 0 auto;
     display: flex;
     /* justify-content: space-between; */
-    margin-top: 10rem;
+    margin-top: 1rem;
 }
 .simulator {
     max-height: 40rem;
