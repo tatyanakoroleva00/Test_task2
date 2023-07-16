@@ -15,8 +15,18 @@
         </div>
         <div class="input-group">
             <div class = 'shelff'>
-                <label for="shelfSize" class="label">Shelf size (mm)</label>
-                <input id="shelfSize" type="text" maxlength="4" class="shelfSize" name="shelfSize" placeholder="0" required>
+                <br>
+                <div class="boxLine">
+                    <label for="shelfSize">Shelf size (mm)</label>
+                    <input id="shelfSize" type="text" maxlength="4" class="shelfSize" name="shelfSize" placeholder="0" required>
+                    <button class="btn-invisible"></button>
+                </div>
+                <div class="boxLine">
+                    <label for="measure" class="label">Box size (mm) &nbsp;</label>
+                    <input class="measurement" type="number" min="0" max="2500" maxLength="4" placeholder="0" name="measure">
+                    <button class="btn-invisible"></button>
+                </div>
+                </form>
             </div>
         </div>
             <input class="submitBtn" type="submit" value="Submit">

@@ -81,13 +81,22 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
+.btn-invisible {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    visibility: hidden;
+    border: none;
+    font-size: 1.5rem;
+    
+    border-radius: 5px;
+}
 .measurement {
     width: 5rem;
     height: 3rem;
     font-size: 1.1rem;
 }
 .shelfSize {
-    margin-bottom: 1.5rem;
     width: 5rem;
     height: 3rem;
     font-size: 1.1rem;
@@ -114,9 +123,9 @@ input {
 label {
     font-size: 1.1rem;
 }
-.label {
+/* .label {
     margin-right: 10%;
-}
+} */
 
 /************************************************ *******************************/
 .cabinet {
@@ -145,6 +154,7 @@ label {
     background-color: rgb(52, 206, 185);
     z-index: 1000;
     box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+    cursor: pointer;
 }
 .resetBtn {
     padding: 1rem;

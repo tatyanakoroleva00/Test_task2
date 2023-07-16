@@ -1,4 +1,4 @@
-/*Изначальные статичные данные*/
+ /*Изначальные статичные данные*/
 // let items = [774, 214, 694, 321, 674, 527, 120, 567];
 // const shelfLength = 1310;
 // let sortedItems = items.sort((a, b) => b - a);
@@ -20,7 +20,7 @@ function removeInput() {
 function addInput() {
     const label = document.createElement('label');
     label.htmlFor = 'measure';
-    label.innerHTML = 'Box size (mm) ';
+    label.innerHTML = 'Box size (mm) &nbsp;';
 
     const measurement = document.createElement('input');
     measurement.type = 'number';
@@ -75,15 +75,15 @@ function getData() {
 
         /**********************CHECKING ******************/
         if (!shelfLength.match(regExp)) { //Проверка: вводимые данные должны быть числовыми
-            alert('The shelf size must be a number');
-            console.log(sortedItems);
+            alert('The shelf length must be a positive number and not equal to 0');
         } else if (shelfLength > 2500) {
-            alert('Number must be less than 2500');
-        }
-        else if (sortedItems.length === 0) { //Проверка: должны быть добавлены коробки 
+            alert('The shelf length must be less than 2500');
+        } else if (sortedItems.length === 0) { //Проверка: должны быть добавлены коробки 
             alert('Add some more shelves/boxes'); //P.s. Полки даже могут быть пустыми
         } else if (shelfLength < sortedItems[0]) { //Проверка: полка не меньше размера коробки 
             alert('Shelf length must be bigger than the box size');
+        } else if (sortedItems[sortedItems.length - 1] < 0) {
+            alert("You can't enter negative numbers"); //No negative numbers
         } else {
                     while (sortedItems.length != 0) {
                     i = 0;
@@ -92,8 +92,10 @@ function getData() {
                     }
                     createShelves(shelfLength, bigArr);
 
-                    submitBtn.style.display = 'none';
+                    // submitBtn.style.display = 'none';
+                    
                 }
+                    
         });
 }
 getData();
@@ -167,6 +169,9 @@ function resetValues () {
 const resetBtn = document.querySelector('.resetBtn');
 resetBtn.addEventListener('click', resetValues);
 
+function modifyData() {
+    getData()
+}
 
 
 
