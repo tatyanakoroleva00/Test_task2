@@ -92,7 +92,7 @@ function getData() {
                     }
                     createShelves(shelfLength, bigArr);
 
-                    // submitBtn.style.display = 'none';
+                    submitBtn.style.display = 'none';
                     
                 }
                     
