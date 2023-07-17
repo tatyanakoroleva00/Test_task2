@@ -149,6 +149,7 @@ label {
     background-image: url('images/cabinet3.png');
     background-repeat: repeat;
     padding-top: 18px;
+    align-self: flex-start;
 }
 
 .shelfCreated {
