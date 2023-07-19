@@ -100,7 +100,6 @@ h1 {
     visibility: hidden;
     border: none;
     font-size: 1.5rem;
-    
     border-radius: 5px;
 }
 .measurement {
@@ -182,4 +181,50 @@ label {
 }
 .resetBtn:hover {
     opacity: 0.9;
+}
+
+@media only screen and (max-width: 780px) {
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .instruction--wrap {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 2rem;
+    }
+    h1 {
+        margin-left: 0;
+        margin-top: 0;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .instruction {
+        margin-left: 0;
+        line-height: 1.3rem;
+        font-size: 1rem;
+    }
+    .main-field {
+        flex-direction: column;
+        max-width: 100%;
+        margin-top: -2rem;
+        gap: 2rem;
+    }
+    .simulator {
+        width: 100%;
+        margin: 0 auto;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    label, input {
+        font-size: 1rem;
+    }
+    .cabinet {
+        flex-direction: column;
+        max-width: 100%;
+        /* margin-bottom: 3rem; */
+        margin: 0 auto 3rem auto;
+    }
 }

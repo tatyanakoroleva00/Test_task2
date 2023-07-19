@@ -64,14 +64,24 @@ function getData() {
     submitBtn.addEventListener('click', () => {
         let shelfSize = document.querySelector('#shelfSize');
         let elements = document.querySelectorAll('.measurement');
+        let shelfLength = shelfSize.value;
 
         let arr = [];
+        console.log(arr);
         for (i = 0; i < elements.length; i++) {
             let elemValue = Number(elements[i].value);
             arr.push(elemValue);
         }
+
+
+
+
         let sortedItems = arr.sort((a, b) => b - a);
-        let shelfLength = shelfSize.value;
+        console.log(sortedItems);
+
+
+
+
 
         /**********************CHECKING ******************/
         if (!shelfLength.match(regExp)) { //Проверка: вводимые данные должны быть числовыми
@@ -111,7 +121,8 @@ function buildShelf(sortedItems, shelfLength) {
     let shelf = [];
     for (let i = 0; i < sortedItems.length; i++) {
         sum += sortedItems[i];
-        if (sum <= shelfLength){
+
+        if (sum < shelfLength || sum == shelfLength){
             shelf.push(sortedItems[i]);
             sortedItems.splice(i, 1);
             --i;
