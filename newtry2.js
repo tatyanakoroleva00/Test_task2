@@ -288,7 +288,7 @@ function createShelves(shelfLength, bigArr) {
         let res = document.createElement('div');
         res.classList = 'shelfCreated';
 
-        res.style.width = `${shelfLength / 3}px`;
+        res.style.width = `${shelfLength / 10}px`;
 
         cabinet.appendChild(res);
         
@@ -296,7 +296,7 @@ function createShelves(shelfLength, bigArr) {
             let box = document.createElement('div');
             box.classList = 'box';
             
-            box.style.width = `${bigArr[i][k] / 3}px`;
+            box.style.width = `${bigArr[i][k] / 10}px`;
             
             box.title = `${bigArr[i][k]}mm & ${i+1}row ${k+1}box`;
             res.appendChild(box);
